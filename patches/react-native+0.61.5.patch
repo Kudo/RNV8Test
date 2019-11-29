@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-native/third-party-podspecs/Folly.podspec b/node_modules/react-native/third-party-podspecs/Folly.podspec
+index 937404b..cac9c3f 100644
+--- a/node_modules/react-native/third-party-podspecs/Folly.podspec
++++ b/node_modules/react-native/third-party-podspecs/Folly.podspec
+@@ -48,6 +48,9 @@ Pod::Spec.new do |spec|
+   spec.pod_target_xcconfig = { "USE_HEADERMAP" => "NO",
+                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                                "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/boost-for-react-native\" \"$(PODS_ROOT)/DoubleConversion\"" }
++  spec.user_target_xcconfig = {
++    "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/Folly\" \"$(PODS_ROOT)/boost-for-react-native\"",
++  }
+ 
+   spec.default_subspec = 'Default'
+ 

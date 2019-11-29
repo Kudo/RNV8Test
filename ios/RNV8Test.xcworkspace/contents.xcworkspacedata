@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../v8-ios/V8Executor/V8Executor.xcodeproj">
+   </FileRef>
 </Workspace>
