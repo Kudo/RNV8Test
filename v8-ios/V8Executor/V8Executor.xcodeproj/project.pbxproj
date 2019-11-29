@@ -7,15 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83AA236B239157120062795C /* V8Executor.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA2369239157120062795C /* V8Executor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83AA237F23915A600062795C /* V8Executor.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237123915A600062795C /* V8Executor.h */; };
+		83AA238023915A600062795C /* V8Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237323915A600062795C /* V8Runtime.h */; };
+		83AA238123915A600062795C /* JSIV8ValueConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237423915A600062795C /* JSIV8ValueConverter.cpp */; };
+		83AA238223915A600062795C /* V8Runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237523915A600062795C /* V8Runtime.cpp */; };
+		83AA238323915A600062795C /* JSIV8ValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237623915A600062795C /* JSIV8ValueConverter.h */; };
+		83AA238423915A600062795C /* V8PointerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237723915A600062795C /* V8PointerValue.h */; };
+		83AA238523915A600062795C /* HostProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237823915A600062795C /* HostProxy.cpp */; };
+		83AA238623915A600062795C /* V8RuntimeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237923915A600062795C /* V8RuntimeFactory.cpp */; };
+		83AA238723915A600062795C /* HostProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237A23915A600062795C /* HostProxy.h */; };
+		83AA238823915A600062795C /* V8RuntimeFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237B23915A600062795C /* V8RuntimeFactory.h */; };
+		83AA238923915A600062795C /* V8PointerValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237C23915A600062795C /* V8PointerValue.cpp */; };
+		83AA238A23915A600062795C /* V8ExecutorFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237D23915A600062795C /* V8ExecutorFactory.mm */; };
+		83AA238B23915A600062795C /* V8ExecutorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237E23915A600062795C /* V8ExecutorFactory.h */; };
 		E7D20FEECF2378C061423B5C /* libPods-V8Executor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7176028C87919D88BAA41 /* libPods-V8Executor.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A16638CA4CF9A66A106698B /* Pods-V8Executor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V8Executor.release.xcconfig"; path = "Target Support Files/Pods-V8Executor/Pods-V8Executor.release.xcconfig"; sourceTree = "<group>"; };
 		83AA2366239157120062795C /* V8Executor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = V8Executor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83AA2369239157120062795C /* V8Executor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V8Executor.h; sourceTree = "<group>"; };
 		83AA236A239157120062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83AA237123915A600062795C /* V8Executor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8Executor.h; sourceTree = "<group>"; };
+		83AA237323915A600062795C /* V8Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8Runtime.h; sourceTree = "<group>"; };
+		83AA237423915A600062795C /* JSIV8ValueConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSIV8ValueConverter.cpp; sourceTree = "<group>"; };
+		83AA237523915A600062795C /* V8Runtime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V8Runtime.cpp; sourceTree = "<group>"; };
+		83AA237623915A600062795C /* JSIV8ValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSIV8ValueConverter.h; sourceTree = "<group>"; };
+		83AA237723915A600062795C /* V8PointerValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8PointerValue.h; sourceTree = "<group>"; };
+		83AA237823915A600062795C /* HostProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HostProxy.cpp; sourceTree = "<group>"; };
+		83AA237923915A600062795C /* V8RuntimeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V8RuntimeFactory.cpp; sourceTree = "<group>"; };
+		83AA237A23915A600062795C /* HostProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostProxy.h; sourceTree = "<group>"; };
+		83AA237B23915A600062795C /* V8RuntimeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8RuntimeFactory.h; sourceTree = "<group>"; };
+		83AA237C23915A600062795C /* V8PointerValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = V8PointerValue.cpp; sourceTree = "<group>"; };
+		83AA237D23915A600062795C /* V8ExecutorFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = V8ExecutorFactory.mm; sourceTree = "<group>"; };
+		83AA237E23915A600062795C /* V8ExecutorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8ExecutorFactory.h; sourceTree = "<group>"; };
 		C9E7176028C87919D88BAA41 /* libPods-V8Executor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V8Executor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D875C4143EDF5477595185C8 /* Pods-V8Executor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V8Executor.debug.xcconfig"; path = "Target Support Files/Pods-V8Executor/Pods-V8Executor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,10 +95,30 @@
 		83AA2368239157120062795C /* V8Executor */ = {
 			isa = PBXGroup;
 			children = (
-				83AA2369239157120062795C /* V8Executor.h */,
+				83AA237123915A600062795C /* V8Executor.h */,
+				83AA237E23915A600062795C /* V8ExecutorFactory.h */,
+				83AA237D23915A600062795C /* V8ExecutorFactory.mm */,
+				83AA237223915A600062795C /* v8runtime */,
 				83AA236A239157120062795C /* Info.plist */,
 			);
 			path = V8Executor;
+			sourceTree = "<group>";
+		};
+		83AA237223915A600062795C /* v8runtime */ = {
+			isa = PBXGroup;
+			children = (
+				83AA237323915A600062795C /* V8Runtime.h */,
+				83AA237423915A600062795C /* JSIV8ValueConverter.cpp */,
+				83AA237523915A600062795C /* V8Runtime.cpp */,
+				83AA237623915A600062795C /* JSIV8ValueConverter.h */,
+				83AA237723915A600062795C /* V8PointerValue.h */,
+				83AA237823915A600062795C /* HostProxy.cpp */,
+				83AA237923915A600062795C /* V8RuntimeFactory.cpp */,
+				83AA237A23915A600062795C /* HostProxy.h */,
+				83AA237B23915A600062795C /* V8RuntimeFactory.h */,
+				83AA237C23915A600062795C /* V8PointerValue.cpp */,
+			);
+			path = v8runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +128,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AA236B239157120062795C /* V8Executor.h in Headers */,
+				83AA237F23915A600062795C /* V8Executor.h in Headers */,
+				83AA238B23915A600062795C /* V8ExecutorFactory.h in Headers */,
+				83AA238023915A600062795C /* V8Runtime.h in Headers */,
+				83AA238423915A600062795C /* V8PointerValue.h in Headers */,
+				83AA238723915A600062795C /* HostProxy.h in Headers */,
+				83AA238823915A600062795C /* V8RuntimeFactory.h in Headers */,
+				83AA238323915A600062795C /* JSIV8ValueConverter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AA238523915A600062795C /* HostProxy.cpp in Sources */,
+				83AA238223915A600062795C /* V8Runtime.cpp in Sources */,
+				83AA238123915A600062795C /* JSIV8ValueConverter.cpp in Sources */,
+				83AA238623915A600062795C /* V8RuntimeFactory.cpp in Sources */,
+				83AA238923915A600062795C /* V8PointerValue.cpp in Sources */,
+				83AA238A23915A600062795C /* V8ExecutorFactory.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
