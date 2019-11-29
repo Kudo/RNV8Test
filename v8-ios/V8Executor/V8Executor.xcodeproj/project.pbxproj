@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83AA237F23915A600062795C /* V8Executor.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237123915A600062795C /* V8Executor.h */; };
+		832DDBB12399E646000547DD /* libv8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 832DDBB02399E646000547DD /* libv8.dylib */; };
+		832DDBB22399E650000547DD /* libv8.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 832DDBB02399E646000547DD /* libv8.dylib */; };
+		83AA237F23915A600062795C /* V8Executor.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237123915A600062795C /* V8Executor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83AA238023915A600062795C /* V8Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237323915A600062795C /* V8Runtime.h */; };
 		83AA238123915A600062795C /* JSIV8ValueConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237423915A600062795C /* JSIV8ValueConverter.cpp */; };
 		83AA238223915A600062795C /* V8Runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237523915A600062795C /* V8Runtime.cpp */; };
@@ -19,12 +21,26 @@
 		83AA238823915A600062795C /* V8RuntimeFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237B23915A600062795C /* V8RuntimeFactory.h */; };
 		83AA238923915A600062795C /* V8PointerValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237C23915A600062795C /* V8PointerValue.cpp */; };
 		83AA238A23915A600062795C /* V8ExecutorFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83AA237D23915A600062795C /* V8ExecutorFactory.mm */; };
-		83AA238B23915A600062795C /* V8ExecutorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237E23915A600062795C /* V8ExecutorFactory.h */; };
+		83AA238B23915A600062795C /* V8ExecutorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AA237E23915A600062795C /* V8ExecutorFactory.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E7D20FEECF2378C061423B5C /* libPods-V8Executor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7176028C87919D88BAA41 /* libPods-V8Executor.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		83AA238F239165E20062795C /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A16638CA4CF9A66A106698B /* Pods-V8Executor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V8Executor.release.xcconfig"; path = "Target Support Files/Pods-V8Executor/Pods-V8Executor.release.xcconfig"; sourceTree = "<group>"; };
+		832DDBB02399E646000547DD /* libv8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libv8.dylib; path = ../lib/universal/libv8.dylib; sourceTree = "<group>"; };
 		83AA2366239157120062795C /* V8Executor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = V8Executor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AA236A239157120062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AA237123915A600062795C /* V8Executor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V8Executor.h; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832DDBB12399E646000547DD /* libv8.dylib in Frameworks */,
 				E7D20FEECF2378C061423B5C /* libPods-V8Executor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +86,7 @@
 		0DF1682AD1DEC6D42BD6F14E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				832DDBB02399E646000547DD /* libv8.dylib */,
 				C9E7176028C87919D88BAA41 /* libPods-V8Executor.a */,
 			);
 			name = Frameworks;
@@ -150,6 +168,8 @@
 				83AA2362239157120062795C /* Sources */,
 				83AA2363239157120062795C /* Frameworks */,
 				83AA2364239157120062795C /* Resources */,
+				83AA238F239165E20062795C /* Embed Libraries */,
+				83380F09239172E8003D31DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832DDBB22399E650000547DD /* libv8.dylib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +245,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		83380F09239172E8003D31DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../lib/universal/libv8.dylib",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "lipo \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\" -thin \"$NATIVE_ARCH_ACTUAL\" -output \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\"\ninstall_name_tool -change './libv8.dylib' '@rpath/V8Executor.framework/libv8.dylib' \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -295,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,9 +389,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -370,12 +410,48 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_ROOT)/Folly\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(SRCROOT)/../include\"",
+				);
 				INFOPLIST_FILE = V8Executor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core.common\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${SRCROOT}/../lib/universal\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.reactexecutor.V8Executor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -394,6 +470,29 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_ROOT)/Folly\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(SRCROOT)/../include\"",
+				);
 				INFOPLIST_FILE = V8Executor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,6 +500,20 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core.common\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${SRCROOT}/../lib/universal\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.reactexecutor.V8Executor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
