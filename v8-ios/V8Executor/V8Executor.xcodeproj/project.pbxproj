@@ -262,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "lipo \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\" -thin \"$NATIVE_ARCH_ACTUAL\" -output \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\"\ninstall_name_tool -change './libv8.dylib' '@rpath/V8Executor.framework/libv8.dylib' \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
+			shellScript = "lipo \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\" -thin \"$PLATFORM_PREFERRED_ARCH\" -output \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\"\ncodesign -f -s \"$CODE_SIGN_IDENTITY\" \"$TARGET_BUILD_DIR/V8Executor.framework/libv8.dylib\"\ninstall_name_tool -change './libv8.dylib' '@rpath/V8Executor.framework/libv8.dylib' \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -318,6 +318,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -379,6 +380,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -410,6 +412,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -470,6 +473,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
